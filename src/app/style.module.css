@@ -1,0 +1,194 @@
+/* src/styles.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light background for the overall page */
+    overflow: hidden; /* Prevents scrollbars from appearing during animations */
+  }
+  
+  .header {
+    background-color: #343a40; /* Darker header for contrast */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .header nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    position: relative; /* Allows positioning of pseudo-elements */
+    overflow: hidden; /* Hide overflow for pseudo-element */
+  }
+  
+  .header nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6f61; /* Soft coral underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Animate the underline */
+  }
+  
+  .header nav a:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .hero {
+    background: linear-gradient(to bottom right, #e0f7fa, #80deea); /* Gradient background */
+    color: #004d40; /* Dark teal text */
+    padding: 100px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease; /* Fade-in effect */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .cta {
+    background: #ff6f61; /* Soft coral for call-to-action */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.5); /* Soft coral shadow */
+    transition: all 0.4s ease; /* Smooth transition for all properties */
+  }
+  
+  .cta:hover {
+    background: #ff4f40; /* Darker coral on hover */
+    transform: translateY(-3px) scale(1.05); /* Slightly enlarge and lift */
+    box-shadow: 0 8px 30px rgba(255, 111, 97, 0.7); /* Enhanced shadow */
+  }
+  
+  .features, .testimonials, .about, .contact {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .featureList {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Ensure responsive layout */
+  }
+  
+  .feature {
+    width: 30%;
+    background-color: #ffffff; /* White background for features */
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Enhanced transition */
+    position: relative; /* Allows for pseudo-elements */
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  .feature:hover {
+    transform: translateY(-10px) rotate(-1deg); /* Lift effect with slight rotation */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+    background-color: #f1f1f1; /* Light gray background on hover */
+  }
+  
+  .feature::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300%;
+    height: 100%;
+    background: rgba(255, 111, 97, 0.1); /* Soft coral overlay */
+    transform: translateX(-50%) scale(0); /* Initially hidden */
+    transition: transform 0.5s ease; /* Animate the overlay */
+    z-index: 0; /* Place below the content */
+  }
+  
+  .feature:hover::before {
+    transform: translateX(-50%) scale(1); /* Show overlay on hover */
+  }
+  
+  .testimonial {
+    margin: 20px 0;
+    font-style: italic; /* Italics for testimonials */
+    position: relative; /* For potential animations */
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40; /* Darker footer */
+    color: #fff;
+    position: relative;
+  }
+  
+  .linkedinHover {
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s; /* Added color change */
+  }
+  
+  .linkedinHover:hover {
+    transform: scale(1.1) rotate(10deg); /* Added rotation on hover */
+    color: #ff6f61; /* Color change on hover */
+  }
+  
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideIn 0.5s ease; /* Slide-in animation for contact form */
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .contactForm input,
+  .contactForm textarea {
+    margin: 10px 0;
+    padding: 12px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #e0e0e0; /* Light gray border */
+    border-radius: 5px;
+    transition: border 0.3s; /* Border color change */
+  }
+  
+  .contactForm input:focus,
+  .contactForm textarea:focus {
+    border: 1px solid #008080; /* Teal border on focus */
+  }
+  
+  .submitButton {
+    background-color: #008080; /* Teal for submit button */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+  }
+  
+  .submitButton:hover {
+    background-color: #006666; /* Darker teal on hover */
+    transform: scale(1.05) rotate(2deg); /* Slight rotation on hover */
+  }
+  
